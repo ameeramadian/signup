@@ -1,3 +1,7 @@
+:root {
+  --dark-teel: #b2edf4;
+  --light-teel: #effcfb;
+}
 
 *{
 	box-sizing: border-box;
@@ -5,7 +9,7 @@
 }
 
 body{
-	background-color: #b2edf4;
+	background-color: var(--dark-teel);
 }
 
 h1{
@@ -15,22 +19,15 @@ h1{
 
 .contents{
 	border-radius: 25px;
-	border-width: 2px 2px 2px 2px;
-	background-color: #effcfb;
+	background-color: var(--light-teel);
 	margin-left: auto;
   	margin-right: auto;
 	width:80%;
 	display: flex;
-
-}
-
-.left{
-	padding: 40px;
-	float: left; 
-	margin-left: auto;
-  	margin-right: auto;
-	width:50%;
-	line-height: 2;
+	flex-flow: row;
+	justify-content: space-around;
+	align-items: baseline;
+	overflow: auto;
 
 }
 
@@ -42,9 +39,39 @@ h1{
 }
 
 
-.right{
-	margin-top: 20px;
-	padding: 40px;
-	float: left;
+.row-item{
+	padding: 40px 0px 40px 0px;
 	width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+  .contents {
+    flex-flow: column;
+  }
+  .row-item{
+  	width: 80%;
+  	margin: auto;
+  	text-align: center;
+  }
+
+  .centered{
+  	width: 100%
+  }
+
+}
+
+p{
+	line-height: 2;
+
+}
+
+input[type=email], input[type=password] {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+input[type=submit]{
+	padding: 4px;
 }
